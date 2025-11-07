@@ -1,0 +1,221 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{document_id}",
+ "creation": "2025-10-27 15:04:22.875052",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ykf0",
+  "date",
+  "inward_number",
+  "heat_number",
+  "column_break_xegu",
+  "test_group",
+  "test_method",
+  "column_break_ixns",
+  "material_shape",
+  "customer_requirment",
+  "is_print",
+  "section_break_chce",
+  "document_id",
+  "column_break_kqst",
+  "child_table_id",
+  "column_break_hjwo",
+  "amended_from",
+  "section_break_dume",
+  "customer_specification",
+  "column_break_qvzk",
+  "test_description",
+  "column_break_uovz",
+  "sample_description",
+  "section_break_yehn",
+  "upload_excel_file",
+  "test_details",
+  "column_break_xkzy",
+  "upload_pdf_file"
+ ],
+ "fields": [
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_ykf0",
+   "fieldtype": "Section Break",
+   "label": "Inward Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Lab Analyst",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "inward_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Inward Number",
+   "options": "Sample Inward"
+  },
+  {
+   "fieldname": "heat_number",
+   "fieldtype": "Data",
+   "label": "Heat Number"
+  },
+  {
+   "fieldname": "column_break_xegu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_group",
+   "fieldtype": "Link",
+   "label": "Test Group",
+   "options": "Test Group"
+  },
+  {
+   "fieldname": "test_method",
+   "fieldtype": "Link",
+   "label": "Test Method",
+   "options": "Test Method"
+  },
+  {
+   "fieldname": "column_break_ixns",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_shape",
+   "fieldtype": "Link",
+   "label": "Material Shape",
+   "options": "Material Shape"
+  },
+  {
+   "fieldname": "customer_requirment",
+   "fieldtype": "Attach",
+   "label": "Customer Requirment"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_dume",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "customer_specification",
+   "fieldtype": "Small Text",
+   "label": "Customer Specification"
+  },
+  {
+   "fieldname": "column_break_qvzk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_description",
+   "fieldtype": "Small Text",
+   "label": "Test Description"
+  },
+  {
+   "fieldname": "section_break_yehn",
+   "fieldtype": "Section Break",
+   "label": "Test Details"
+  },
+  {
+   "fieldname": "sample_description",
+   "fieldtype": "Small Text",
+   "label": "Sample Description"
+  },
+  {
+   "fieldname": "child_table_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Child Table Id"
+  },
+  {
+   "fieldname": "document_id",
+   "fieldtype": "Data",
+   "label": "Document Id",
+   "unique": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uovz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_details",
+   "fieldtype": "Table",
+   "label": "Test Details",
+   "options": "Test Details"
+  },
+  {
+   "fieldname": "section_break_chce",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "column_break_kqst",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hjwo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "upload_excel_file",
+   "fieldtype": "Attach",
+   "label": "Upload Excel File"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_print",
+   "fieldtype": "Check",
+   "label": "Is Print"
+  },
+  {
+   "fieldname": "upload_pdf_file",
+   "fieldtype": "Attach",
+   "label": "Upload PDF File"
+  },
+  {
+   "fieldname": "column_break_xkzy",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-11-04 16:25:13.490469",
+ "modified_by": "saifa@sanpra.co.in",
+ "module": "Delta Sanpra",
+ "name": "Lab Analyst",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

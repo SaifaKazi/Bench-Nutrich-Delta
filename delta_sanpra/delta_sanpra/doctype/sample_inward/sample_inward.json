@@ -1,0 +1,246 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-10-27 10:59:35.638413",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "party_details_tab",
+  "section_break_lkqk",
+  "naming_series",
+  "amended_from",
+  "date",
+  "column_break_dirz",
+  "customer",
+  "quantity",
+  "column_break_xocz",
+  "received_by",
+  "sample_received",
+  "column_break_fpkr",
+  "challan_no",
+  "challan_date",
+  "section_break_rahy",
+  "client",
+  "column_break_cecu",
+  "inspector",
+  "other_information_section",
+  "other_information",
+  "material_details_tab",
+  "material_details",
+  "sample_details_tab",
+  "get_sample",
+  "test_on_sample",
+  "process_charges_tab",
+  "cutting_charge_section",
+  "cutting_charge",
+  "machining_charge_section",
+  "machining_charge"
+ ],
+ "fields": [
+  {
+   "fieldname": "party_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Party Details"
+  },
+  {
+   "fieldname": "section_break_lkqk",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sample Inward",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_dirz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity",
+   "precision": "0"
+  },
+  {
+   "fieldname": "column_break_xocz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "received_by",
+   "fieldtype": "Link",
+   "label": "Received By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "sample_received",
+   "fieldtype": "Select",
+   "label": "Sample Received",
+   "options": "\nBy Hand\nBy Post\nBy Courier"
+  },
+  {
+   "fieldname": "column_break_fpkr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "challan_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Challan No"
+  },
+  {
+   "fieldname": "challan_date",
+   "fieldtype": "Date",
+   "label": "Challan Date"
+  },
+  {
+   "fieldname": "section_break_rahy",
+   "fieldtype": "Section Break",
+   "label": "Wittness By"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_cecu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inspector",
+   "fieldtype": "Link",
+   "label": "Inspector",
+   "options": "Inspector"
+  },
+  {
+   "fieldname": "other_information_section",
+   "fieldtype": "Section Break",
+   "label": "Other Information"
+  },
+  {
+   "fieldname": "other_information",
+   "fieldtype": "Small Text",
+   "label": "Other Information"
+  },
+  {
+   "fieldname": "material_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Material Details"
+  },
+  {
+   "fieldname": "material_details",
+   "fieldtype": "Table",
+   "label": "Material Details",
+   "options": "Material Details"
+  },
+  {
+   "fieldname": "sample_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sample Details"
+  },
+  {
+   "fieldname": "test_on_sample",
+   "fieldtype": "Table",
+   "label": "Test On sample",
+   "options": "Test On sample"
+  },
+  {
+   "fieldname": "process_charges_tab",
+   "fieldtype": "Tab Break",
+   "label": "Process Charges"
+  },
+  {
+   "fieldname": "cutting_charge_section",
+   "fieldtype": "Section Break",
+   "label": "Cutting Charge"
+  },
+  {
+   "fieldname": "cutting_charge",
+   "fieldtype": "Table",
+   "label": "Cutting Charge",
+   "options": "Cutting Charge"
+  },
+  {
+   "fieldname": "machining_charge_section",
+   "fieldtype": "Section Break",
+   "label": "Machining Charge"
+  },
+  {
+   "fieldname": "machining_charge",
+   "fieldtype": "Table",
+   "label": "Machining Charge",
+   "options": "Machining Charge"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "IN/25/.##"
+  },
+  {
+   "fieldname": "get_sample",
+   "fieldtype": "Button",
+   "label": "Get Sample"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Lab Analyst",
+   "link_fieldname": "inward_number"
+  }
+ ],
+ "modified": "2025-10-30 20:15:12.104213",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Sample Inward",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

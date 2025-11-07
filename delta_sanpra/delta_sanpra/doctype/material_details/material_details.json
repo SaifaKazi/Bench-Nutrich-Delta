@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-27 11:14:30.278792",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "material_specification",
+  "counter",
+  "column_break_sibk",
+  "heat_number",
+  "column_break_jqof",
+  "material_shape",
+  "material_dimension",
+  "column_break_hddh",
+  "sample__prepared",
+  "prepared_date",
+  "section_break_oiwb",
+  "sample_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "material_specification",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material Specification",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_sibk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "heat_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Heat Number"
+  },
+  {
+   "fieldname": "column_break_jqof",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_shape",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material Shape",
+   "options": "Material Shape"
+  },
+  {
+   "fieldname": "material_dimension",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Material Dimension"
+  },
+  {
+   "fieldname": "column_break_hddh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sample__prepared",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Sample  Prepared",
+   "options": "\nYES\nNO"
+  },
+  {
+   "fieldname": "prepared_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Prepared Date"
+  },
+  {
+   "fieldname": "section_break_oiwb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sample_description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Sample Description"
+  },
+  {
+   "fieldname": "counter",
+   "fieldtype": "Data",
+   "label": "Counter"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-11-01 10:34:36.638159",
+ "modified_by": "saifa@sanpra.co.in",
+ "module": "Delta Sanpra",
+ "name": "Material Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
