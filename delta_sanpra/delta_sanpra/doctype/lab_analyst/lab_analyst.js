@@ -15,12 +15,24 @@ frappe.ui.form.on("Lab Analyst", {
     async upload_excel_file(frm) {
         if (frm.doc.upload_excel_file) {
             await frm.call({
-                method: "create_rate_chart_from_file",
+                method: "create_rate_chart_from_excel",
                 doc: frm.doc,
                 freeze: true,
-                freeze_message: "Importing test details...",
+                freeze_message: "Importing test details from Excel...",
             });
             frm.reload_doc();
         }
-    }
+    },
+
+    async upload_pdf_file(frm) {
+        if (frm.doc.upload_pdf_file) {
+            await frm.call({
+                method: "create_rate_chart_from_pdf",
+                doc: frm.doc,
+                freeze: true,
+                freeze_message: "Importing test details from PDF...",
+            });
+            frm.reload_doc();
+        }
+    },
 });
