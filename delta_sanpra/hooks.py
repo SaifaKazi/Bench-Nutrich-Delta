@@ -46,7 +46,8 @@ app_license = "mit"
 doctype_js = {
     "Item" : "public/js/custom_item.js",
     "Customer" : "public/js/custom_customer.js",
-    "Supplier" : "public/js/custom_supplier.js"
+    "Supplier" : "public/js/custom_supplier.js",
+    "Interview": "public/js/skillset.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -141,13 +142,14 @@ doctype_js = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Item": {
+        "validate": "delta_sanpra.public.py.custom_item.set_item_name"
+		# "on_update": "method",
+		# "on_cancel": "method",
+		# "on_trash": "method"
+	}
+}
 
 # Scheduled Tasks
 # ---------------

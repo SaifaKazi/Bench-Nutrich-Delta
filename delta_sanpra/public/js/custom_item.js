@@ -12,15 +12,36 @@ frappe.ui.form.on("Item", {
                 ]
             }
         })
-        frm.set_query("test_description","custom_material_sample_details", function() {
-            return {
-                filters: [
-                    ["Test Description","name","in",description]
-                ]   
-            }  
-        })
-    }  
-}); 
+        // frm.set_query("test_description","custom_material_sample_details", function() {
+        //     return {
+        //         filters: [
+        //             ["Test Description","name","in",description]
+        //         ]   
+        //     }  
+        // })
+    }, 
+    custom_standard: set_item_name,
+    custom_year: set_item_name,
+    custom_grade: set_item_name  
+});
+function set_item_name(frm) {
+    let standard = frm.doc.custom_standard || "";
+    let year = frm.doc.custom_year || "";
+    let grade = frm.doc.custom_grade || "";
+
+    if (standard && year && grade) {
+        frm.set_value("item_name", `${standard} : ${year} ${grade}`);
+    } else if (standard && year) {
+        frm.set_value("item_name", `${standard} : ${year}`);
+    } else if (standard && grade) {
+        frm.set_value("item_name", `${standard} : ${grade}`);
+    } else if (standard) {
+        frm.set_value("item_name", standard);
+    } else {
+        frm.set_value("item_name", "");
+    }
+}
+
 
 frappe.ui.form.on("Material Sample Details", {
     test_group(frm, cdt, cdn) {
@@ -69,3 +90,4 @@ frappe.ui.form.on("Material Sample Details", {
     }
 
 });
+

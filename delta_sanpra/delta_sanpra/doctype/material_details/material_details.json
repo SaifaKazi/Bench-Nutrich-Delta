@@ -84,6 +84,7 @@
   {
    "fieldname": "counter",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Counter"
   }
  ],
@@ -91,7 +92,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-01 10:34:36.638159",
+ "modified": "2025-11-12 11:36:38.626648",
  "modified_by": "saifa@sanpra.co.in",
  "module": "Delta Sanpra",
  "name": "Material Details",

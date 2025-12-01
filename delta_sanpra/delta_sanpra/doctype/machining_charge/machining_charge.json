@@ -13,7 +13,9 @@
   "cuuting_charge",
   "column_break_mcil",
   "quantity",
-  "total"
+  "total",
+  "section_break_yctf",
+  "description"
  ],
  "fields": [
   {
@@ -21,7 +23,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Material Type",
-   "options": "\nSS\nCI\nSG"
+   "options": "\nCS\nSS\nDuplex\nNickal\nNon fe"
   },
   {
    "fieldname": "column_break_kduy",
@@ -63,13 +65,22 @@
    "label": "Total",
    "precision": "2",
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_yctf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-10-27 15:19:17.530234",
+ "modified": "2025-11-10 20:15:06.248473",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Machining Charge",

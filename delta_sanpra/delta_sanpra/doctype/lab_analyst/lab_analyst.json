@@ -2,38 +2,65 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:{document_id}",
- "creation": "2025-10-27 15:04:22.875052",
+ "creation": "2025-11-10 12:28:34.474760",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_ykf0",
   "date",
   "inward_number",
-  "heat_number",
   "column_break_xegu",
   "test_group",
   "test_method",
+  "material_specification",
   "column_break_ixns",
   "material_shape",
+  "heat_number",
   "customer_requirment",
+  "challan_no",
+  "customer_name",
+  "column_break_wbku",
+  "ulr_no",
+  "witness",
   "is_print",
+  "discipline",
   "section_break_chce",
   "document_id",
   "column_break_kqst",
   "child_table_id",
   "column_break_hjwo",
   "amended_from",
+  "image_section",
+  "product_image_1",
+  "column_break_lbzi",
+  "product_image_2",
   "section_break_dume",
   "customer_specification",
   "column_break_qvzk",
   "test_description",
   "column_break_uovz",
   "sample_description",
+  "section_break_sxqk",
+  "test_deatils_physical_column",
+  "excel_file",
+  "column_break_zcbl",
   "section_break_yehn",
   "upload_excel_file",
-  "test_details",
   "column_break_xkzy",
-  "upload_pdf_file"
+  "test_details_metallography_section",
+  "attach_excel_file",
+  "column_break_bygm",
+  "section_break_mmvb",
+  "test_details",
+  "test_details_physical",
+  "test_details_metallography",
+  "section_break_jydf",
+  "field_wise_volume_estimate",
+  "section_break_lyrn",
+  "witness_name",
+  "remark",
+  "column_break_oqpn",
+  "customer_requirement"
  ],
  "fields": [
   {
@@ -72,6 +99,7 @@
   {
    "fieldname": "test_group",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Test Group",
    "options": "Test Group"
   },
@@ -94,6 +122,7 @@
   {
    "fieldname": "customer_requirment",
    "fieldtype": "Attach",
+   "hidden": 1,
    "label": "Customer Requirment"
   },
   {
@@ -117,9 +146,10 @@
    "label": "Test Description"
   },
   {
+   "depends_on": "eval:doc.test_group ==\"Chemical\"",
    "fieldname": "section_break_yehn",
    "fieldtype": "Section Break",
-   "label": "Test Details"
+   "label": "Test Details Chemical"
   },
   {
    "fieldname": "sample_description",
@@ -150,9 +180,10 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.test_group==\"Chemical\"",
    "fieldname": "test_details",
    "fieldtype": "Table",
-   "label": "Test Details",
+   "label": "Test Details Chemical",
    "options": "Test Details"
   },
   {
@@ -180,20 +211,156 @@
    "label": "Is Print"
   },
   {
-   "fieldname": "upload_pdf_file",
-   "fieldtype": "Attach",
-   "label": "Upload PDF File"
-  },
-  {
    "fieldname": "column_break_xkzy",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mmvb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "material_specification",
+   "fieldtype": "Link",
+   "label": "Material Specification",
+   "options": "Item"
+  },
+  {
+   "fieldname": "section_break_lyrn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "witness",
+   "fieldtype": "Select",
+   "label": "Witness",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.test_group !=\"Chemical\" && doc.test_group !=\"Metallography Test\"",
+   "fieldname": "test_details_physical",
+   "fieldtype": "Table",
+   "label": "Test Details Physical",
+   "options": "Test Details Physical"
+  },
+  {
+   "depends_on": "eval:doc.test_group !=\"Chemical\" && doc.test_group !=\"Metallography Test\"",
+   "fieldname": "section_break_sxqk",
+   "fieldtype": "Section Break",
+   "label": "Test Deatils Physical"
+  },
+  {
+   "fieldname": "test_deatils_physical_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "excel_file",
+   "fieldtype": "Attach",
+   "label": "Excel File"
+  },
+  {
+   "fieldname": "column_break_zcbl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wbku",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ulr_no",
+   "fieldtype": "Data",
+   "label": "ULR No."
+  },
+  {
+   "fieldname": "discipline",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Discipline"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "challan_no",
+   "fieldtype": "Data",
+   "label": "Challan No"
+  },
+  {
+   "fieldname": "witness_name",
+   "fieldtype": "Data",
+   "label": "Witness Name"
+  },
+  {
+   "fieldname": "column_break_oqpn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_requirement",
+   "fieldtype": "Data",
+   "label": "Customer Requirement"
+  },
+  {
+   "depends_on": "eval: doc.test_group == \"Metallography Test\"",
+   "fieldname": "test_details_metallography",
+   "fieldtype": "Table",
+   "label": "Test Details Metallography",
+   "options": "Metallography Items"
+  },
+  {
+   "depends_on": "eval: doc.test_group == \"Metallography Test\"",
+   "fieldname": "test_details_metallography_section",
+   "fieldtype": "Section Break",
+   "label": "Test Details Metallography"
+  },
+  {
+   "fieldname": "attach_excel_file",
+   "fieldtype": "Attach",
+   "label": "Attach Excel File"
+  },
+  {
+   "fieldname": "column_break_bygm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "image_section",
+   "fieldtype": "Section Break",
+   "label": "Image"
+  },
+  {
+   "fieldname": "product_image_1",
+   "fieldtype": "Attach Image",
+   "label": "Product Image 1"
+  },
+  {
+   "fieldname": "column_break_lbzi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "product_image_2",
+   "fieldtype": "Attach Image",
+   "label": "Product Image 2"
+  },
+  {
+   "fieldname": "section_break_jydf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "field_wise_volume_estimate",
+   "fieldtype": "Table",
+   "label": "Field wise Volume Estimate",
+   "options": "Volume Table"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-04 16:25:13.490469",
+ "modified": "2025-12-01 18:24:37.183891",
  "modified_by": "saifa@sanpra.co.in",
  "module": "Delta Sanpra",
  "name": "Lab Analyst",

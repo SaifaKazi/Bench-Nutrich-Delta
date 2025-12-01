@@ -7,8 +7,15 @@
  "engine": "InnoDB",
  "field_order": [
   "method_name",
+  "section_break_vuzg",
   "column_break_sexz",
-  "test_group"
+  "test_group",
+  "column_break_cunb",
+  "discipline",
+  "column_break_ncti",
+  "group",
+  "section_break_jiyt",
+  "chemical_details"
  ],
  "fields": [
   {
@@ -29,13 +36,47 @@
    "label": "Test Group",
    "options": "Test Group",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_jiyt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "chemical_details",
+   "fieldtype": "Table",
+   "label": "Chemical Details",
+   "options": "Chemical Details Test Method"
+  },
+  {
+   "fieldname": "section_break_vuzg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_cunb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discipline",
+   "fieldtype": "Select",
+   "label": "Discipline",
+   "options": "\nChemical\nMechanical"
+  },
+  {
+   "fieldname": "column_break_ncti",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Select",
+   "label": "Group",
+   "options": "\nMechanical Properties of Metals\nMetallography\nCorrosion Tests\nMetals and Alloys"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-27 11:47:53.568525",
- "modified_by": "Administrator",
+ "modified": "2025-11-25 20:53:28.263439",
+ "modified_by": "admin@gmail.com",
  "module": "Delta Sanpra",
  "name": "Test Method",
  "naming_rule": "Expression",

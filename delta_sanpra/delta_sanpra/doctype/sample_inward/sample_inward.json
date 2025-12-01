@@ -11,6 +11,7 @@
   "naming_series",
   "amended_from",
   "date",
+  "sample_received_date",
   "column_break_dirz",
   "customer",
   "quantity",
@@ -29,13 +30,16 @@
   "material_details_tab",
   "material_details",
   "sample_details_tab",
+  "section_break_jjrh",
   "get_sample",
   "test_on_sample",
   "process_charges_tab",
   "cutting_charge_section",
   "cutting_charge",
   "machining_charge_section",
-  "machining_charge"
+  "machining_charge",
+  "section_break_uczp",
+  "sticker_print"
  ],
  "fields": [
   {
@@ -206,7 +210,27 @@
   {
    "fieldname": "get_sample",
    "fieldtype": "Button",
-   "label": "Get Sample"
+   "label": "Auto Assign Test"
+  },
+  {
+   "fieldname": "section_break_uczp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "sticker_print",
+   "fieldtype": "Table",
+   "label": "Sticker Print",
+   "options": "Sticker Print"
+  },
+  {
+   "fieldname": "section_break_jjrh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sample_received_date",
+   "fieldtype": "Date",
+   "label": "Sample Received Date"
   }
  ],
  "grid_page_length": 50,
@@ -218,8 +242,8 @@
    "link_fieldname": "inward_number"
   }
  ],
- "modified": "2025-10-30 20:15:12.104213",
- "modified_by": "Administrator",
+ "modified": "2025-11-14 12:51:08.762559",
+ "modified_by": "saifa@sanpra.co.in",
  "module": "Delta Sanpra",
  "name": "Sample Inward",
  "naming_rule": "By \"Naming Series\" field",

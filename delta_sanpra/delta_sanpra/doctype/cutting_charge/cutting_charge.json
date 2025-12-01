@@ -6,22 +6,23 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "column_break_mcil",
+  "material",
+  "column_break_zrmb",
   "material_type",
   "column_break_kduy",
   "thik_dia",
   "column_break_vgqi",
-  "cuuting_charge",
-  "column_break_mcil",
-  "quantity",
   "total"
  ],
  "fields": [
   {
+   "fetch_from": "material.custom_material_types",
    "fieldname": "material_type",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Material Type",
-   "options": "\nSS\nCI\nSG"
+   "options": "Material Type"
   },
   {
    "fieldname": "thik_dia",
@@ -29,13 +30,6 @@
    "in_list_view": 1,
    "label": "Thik/Dia",
    "precision": "0"
-  },
-  {
-   "fieldname": "cuuting_charge",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Cuuting Charge",
-   "precision": "2"
   },
   {
    "fieldname": "column_break_kduy",
@@ -50,26 +44,31 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "quantity",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Quantity",
-   "precision": "2"
-  },
-  {
+   "fetch_from": "material_type.rate",
    "fieldname": "total",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Total",
+   "label": "Amount",
    "precision": "2",
    "read_only": 1
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_zrmb",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-10-27 15:18:48.878202",
+ "modified": "2025-11-18 15:56:00.619885",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Cutting Charge",

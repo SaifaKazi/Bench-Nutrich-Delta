@@ -76,22 +76,36 @@ frappe.ui.form.on("Sample Inward", {
 });
 
 frappe.ui.form.on("Material Details", {
-    // material_specification(frm, cdt, cdn) {
-    //     let child = locals[cdt][cdn];
-    //     items.push(child.material_specification)
-    // },
     material_specification(frm, cdt, cdn) {
         update_items_array(frm);
     },
-
-    // Also handle row deletion
     material_details_remove(frm, cdt, cdn) {
         update_items_array(frm);
     },
-
-    // Optionally run on load to initialize
     onload(frm) {
         update_items_array(frm);
+    },
+    material_details_remove(frm, cdt, cdn) {
+        update_items_array(frm);
+        call_get_material_dimension(frm);
+    },
+    material_dimension(frm, cdt, cdn) {
+        call_cutting_row_update(frm);
+    },
+    material_specification(frm, cdt, cdn) {
+        call_cutting_row_update(frm);
+    },
+    material_details_add: function (frm, cdt, cdn) {
+        let qty = frm.doc.quantity || 0; 
+        let rows = frm.doc.material_details.length;
+        if (rows > qty) {
+            frappe.msgprint(
+                __("You cannot add more than {0} Material Details rows because Quantity is {0}", [qty])
+            );
+            frm.doc.material_details.pop();
+            frm.refresh_field("material_details");
+            return false;
+        }
     }
 });
 
@@ -104,6 +118,17 @@ function update_items_array(frm) {
     });
     console.log("Updated items:", items);
 } 
+function call_cutting_row_update(frm) {
+    frm.call({
+        method: "update_cutting_rows",
+        doc: frm.doc,
+        freeze: true,
+        freeze_message: __("Updating cutting charge rows..."),
+        callback: function () {
+            frm.refresh_field("cutting_charge");
+        }
+    });
+}
 
 frappe.ui.form.on("Test On sample", {
     test_group(frm, cdt, cdn) {
@@ -178,4 +203,6 @@ frappe.ui.form.on("Test On sample", {
         }
     }
 });
+
+
 
